@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+    <title>Attestation Couvre-feu 2020</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="Description" content="Application pour générer facilement vos attestations numériques COVID-19 pour le couvre-feu Octobre 2020">        
+    <meta name="Robots" content="all">
+    <meta name="author" content="NadfriJS" />
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+<fieldset id="field_Attest">
+    <legend>Liste des attestations</legend>
+
+    <div id="div_NoUser">
+        <p>Créér un nouvel Utilisateur</p>
+        <div id="divNewUser">
+            <input id="bt_newUser2" type="image" src="img/newUser.png" onclick="document.location='newUser.html'">
+        </div>
+    </div>
+
+    <div id="div_NoAttest">
+        <p>Créér une nouvelle Attestation</p>
+        <div id="divNewAttest">
+            <input id="bt_newAttest2" type="image" src="img/doc.png" onclick="document.location='newAttest.html'">
+        </div>
+    </div>
+
+</fieldset>
+
+<div id="divPopUp">
+    <p>Etes vous certain de vouloir supprimer cette Attestation?</p>
+    <div class="btPopUp">
+        <button id="bt_oui">Oui</button>
+        <button id="bt_non">Non</button>
+    </div>
+</div>
+
+<div id="output"></div>
+
+
+<div id="divIcon">
+    <input type="image" src="img/contact.png" onclick="document.location='listUsers.html'">
+    <input id="bt_newAttest" type="image" src="img/attestIcon.png" onclick="document.location='newAttest.html'">
+    <input type="image" src="img/userIcon.png" onclick="document.location='newUser.html'">
+</div>
+
+</body>
+</html>

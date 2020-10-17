@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+    <title>Nouvelle Attestation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="newAttest.css">
+    <script src="newAttest.js" defer></script>
+</head>
+<body>
+
+<h1>Nouvelle Attestation</h1>
+
+<fieldset id="field_User">
+    <legend>Liste des utilisateurs</legend>
+</fieldset>
+
+<form id="form">
+    <fieldset>
+        <legend>Formulaire</legend>
+
+        <label for="dateSortie">Date de Sortie:</label>
+        <span id="spanCount">Pas d'utilisateurs selectionnés</span>
+        <input id="dateSortie"  type="date" autocomplete="off" required class="inputs">
+        <br>
+        <label for="heureSortie">Heure de Sortie:</label><input id="heureSortie" type="time" autocomplete="off" required class="inputs">
+        <br>
+        <label for="motif">Motif:</label>
+        <br>
+        <select id="motif" required class="inputs">
+            <option value="">Choisir un motif</option>
+            <option value="travail">Activité Professionnelle</option>
+            <option value="santé">Consultations et Soins</option>
+            <option value="famille">Assistance Famille</option>
+            <option value="handicap">Handicap</option>
+            <option value="judiciaire">Convocation Judiciaire</option>
+            <option value="missions">Mission d'interet Générale</option>
+            <option value="transits">Transit</option>
+            <option value="animaux">Animaux</option>
+        </select>
+
+    </fieldset>
+
+    <div id="divAjouter">
+        <input id="bt_newAttest" type="image" src="img/doc.png">
+    </div>
+</form>
+
+
+<div id="divIcon">
+    <input type="image" src="img/contact.png"  onclick="document.location='listUsers.html'">
+    <input type="image" src="img/list.png"     onclick="document.location='index.html'">
+    <input type="image" src="img/userIcon.png" onclick="document.location='newUser.html'">
+</div>
+    
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/***************Enleve les effets chrome sur les input/button********/
+input[type=image]:focus {outline:0;}
+*{ -webkit-tap-highlight-color: rgba(0,0,0,0);
+   -webkit-tap-highlight-color: transparent; /* For some Androids */ 
+} 
+/************************************/
+body{
+	margin: 0;	
+    background: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+}
+
+/***************Section Fieldset********************/
+#field_Attest{
+	border-radius: 5px;
+	border: 1px solid teal;
+    text-transform: capitalize;
+    max-height: 87vh;
+    overflow-y: auto;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    box-shadow: 3px 1px 2px 1px #d8d8d8;
+}
+
+legend{
+    color: royalblue;
+    font-weight: bold;
+}
+
+/***********Barre de Menu**********************/
+#divIcon{
+    position: fixed;
+    bottom: 0vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(0,0,0,0.1);
+}
+
+
+
+#divIcon input{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    box-shadow: 4px 4px 2px -2px #919191;
+}
+
+/***********Section Div No User/No Attestation********************/
+#div_NoUser,#div_NoAttest{
+    text-align: center;
+    color: royalblue;
+}
+
+
+#divNewUser,#divNewAttest{
+	text-align: center;
+	height: 25vw;
+	width: 25vw;
+	border-radius: 50%;
+	border: ridge 5px teal;
+	margin: auto;
+	margin-top: 1vh;
+    background-color:springGreen;
+    box-shadow: 4px 4px 2px -2px #919191;
+}
+
+
+
+
+#field_Attest input{
+	width: 20vw;
+	height: auto;
+	padding-top: 2vw;
+	padding-left: 1vw;
+}
+
+
+/********************Section Div Ligne Attestation*********************/
+.divLine{
+    border-radius: 5px;
+    background-color: white;
+    margin-bottom: 0.5vh;
+    font-size: smaller;
+    display: flex;
+    box-shadow: 3px 4px 4px -1px #7F7F7F;
+}
+
+
+/********Section Oeil/Bin***********************/
+.divImg{
+    width: 10%;
+    display: flex;
+}
+
+.divImg img{
+    width: 100%;
+	height: auto;
+    cursor: pointer;
+    margin: auto;
+}
+
+.divBin{
+    background-color: #e1f7f7;
+}
+
+
+/*******Section DivInfo***************/
+.divInfo{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.spanDate, .spanMotif{
+    font-style: oblique;
+}
+
+.spanMotif{
+    color: blue;
+}
+
+/*************Section Pop Up********************/
+#divPopUp{
+    display: none;
+    position: absolute;
+    margin-left: 10%;
+    margin-right: 10%;
+    top: 35%;
+    height: 22%;
+    border-radius: 5px;
+    color: royalblue;
+
+    z-index:1;
+    background-color: white;
+    text-align: center;
+    box-shadow: 3px 4px 4px -1px #7F7F7F;
+}
+
+.btPopUp{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btPopUp button{
+    border: none;
+    width: 30%;
+    height: 5vh;
+    box-shadow: 4px 4px 2px -2px #919191;
+}
+
+/*****************Attestation Ecrite********************************/
+
+#output{
+    overflow:auto ;
+    background-color: white;
+}
+
+#output fieldset{
+	border-radius: 5px;
+    border: 1px solid teal;
+    text-transform: capitalize;
+
+}
+
+
+#output span{
+    color: blue;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+#output p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.5rem;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+    width: 85vw;
+}
+
+h1{
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0;
+}
+
+h2{
+    text-align: center;
+    font-size: 0.5rem;
+}
+
+.case img{
+    width: 1.5rem;
+    margin-right: 0.4rem;
+    box-shadow: 3px 4px 2px -2px #919191;
+}
+
+.case{
+    margin-left: 0.2rem;
+    margin-bottom: 20px;
+}
+
+/*************QR CODE***********/
+
+figure{
+    text-align: center;
+}
+
+figure img{
+    width: 90%;
+}
+
+figcaption{
+    font-size: 0.6rem;
+}
+
+
+/***************/

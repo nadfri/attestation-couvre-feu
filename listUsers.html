@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+    <title>Liste Utilisateurs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="listUsers.css">
+    <script src="listUsers.js" defer></script>
+</head>
+<body>
+
+
+<fieldset id="field_User">
+    <legend>Liste des utilisateurs</legend>
+
+    <div id="div_NoUser">
+        <p>Créér un nouvel Utilisateur</p>
+        <div id="divNewUser">
+            <input id="bt_newUser2" type="image" src="img/newUser.png" onclick="document.location='newUser.html'">
+        </div>
+    </div>
+
+</fieldset>
+
+
+<form id="edit_form">
+    <fieldset class="etatCivil">
+        <legend>Etat Civil</legend>
+        <input id="prenom"     type="text" placeholder="Prénom" required autocomplete="off">
+        <br>
+        <input id="nom"        type="text" placeholder="Nom" required autocomplete="off">
+        <br>
+        <input id="birthday"   type="date" placeholder="Date de naissance" autocomplete="off" required>
+    </fieldset>
+    
+    <fieldset class="vicopo-wrapper">
+        <legend>Lieu de Naissance</legend>
+        <input id="cpNaiss" class="code"  type="number" min=1 max=99999 placeholder="Code Postal" autocomplete="off" required>
+        <input id="placeBirth" class="city" placeholder="Lieu de Naissance" autocomplete="off" required>
+        <div class="output"></div>
+    
+    </fieldset>
+    
+    <fieldset class="vicopo-wrapper">
+        <legend>Domicile</legend>
+            <input id="adresse" type="text" placeholder="Adresse du domicile" required>
+            <br>
+            <input id="codePostal" class="code" type="number" min=1 max=99999 placeholder="Code Postal" autocomplete="off" required>
+            <input id="city" class="city" placeholder="Ville" autocomplete="off" required>
+            <div class="output"></div>
+    </fieldset>
+
+
+    <div id="divEdit"><input id="bt_edit" type="image" src="img/editUser.png"></div>
+
+</form>
+
+<div id="divPopUp">
+    <p>Etes vous certain de vouloir supprimer cet utilisateur?</p>
+    <div class="btPopUp">
+        <button id="bt_oui">Oui</button>
+        <button id="bt_non">Non</button>
+    </div>
+</div>
+
+
+<div id="divIcon">
+    <input type="image" src="img/list.png"       onclick="document.location='index.html'">
+    <input id="bt_newAttest" type="image" src="img/attestIcon.png" onclick="document.location='newAttest.html'">
+    <input type="image" src="img/userIcon.png"   onclick="document.location='newUser.html'">
+</div>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="codePostal.js"></script>
+</body>
+</html>
