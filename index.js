@@ -5,7 +5,7 @@ JSON.parse(localStorage.getItem('usersList')): [];
 
 let listAttest_Storage = (JSON.parse(localStorage.getItem('listAttest_Storage')) != null)? 
 JSON.parse(localStorage.getItem('listAttest_Storage')): [];
-console.log(listAttest_Storage);
+//console.log(listAttest_Storage);
 
 //**********/Désactivation du bouton new Attestation si No User et de la div_NoUser***/
 if(tabUsers.length == 0) 
@@ -98,9 +98,18 @@ for(let attestation of listAttest_Storage)
     };
 
     //****************Bouton Voir Attestation **************************************/
+    let open = false;
     divLine.onclick = (e) => {
-        if(!Object.is(e.target, imgBin)) //ne tient pas compte du click sur ImgBin
+        if(!Object.is(e.target, imgBin) && open == false) //ne tient pas compte du click sur ImgBin
+        {
             affichage_Attestation(attestation);
+            open = true;
+        }
+        else
+        {
+            output.innerHTML = ""; //vide la div d'affichage
+            open = false;
+        }
     }
 } 
 
@@ -144,11 +153,12 @@ function affichage_Attestation(tab)
 
     //*****************QRCODE******************* */
         const imgQR = document.createElement("img");
-        let info = `Cree le:${tab.dateCreation} a ${tab.heureCreation};
-                    Nom:${user.nom};Prenom:${user.prenom};
-                    Naissance:${user.birthday} a ${user.placeBirth};
-                    Adresse:${adresseID};
-                    Sortie:${tab.dateSortie} a ${tab.heureSortie};
+        let info = `Créé le:${tab.dateCreation} à ${tab.heureCreation}%3B
+                    Nom:${user.nom}%3B
+                    Prenom:${user.prenom}%3B
+                    Naissance:${user.birthday} à ${user.placeBirth}%3B
+                    Adresse:${adresseID}%3B
+                    Sortie:${tab.dateSortie} à ${tab.heureSortie}%3B
                     Motifs:${tab.motif}`;
     
         imgQR.src = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&ecc=M&data="+info;
@@ -160,7 +170,6 @@ function affichage_Attestation(tab)
 
     
         //*********************Version Ecrite******************** */
-
         const fieldset = document.createElement("fieldset");
         let legend = document.createElement("legend");
         legend.textContent = user.prenom;
@@ -174,7 +183,7 @@ function affichage_Attestation(tab)
             l'état d'urgence sanitaire
         </h2>
 
-        <p>Je soussigné(e), Mme/M. : <span class="colorSpan">${prenomID} ${nomID}</span></p>
+        <p>Je soussigné(e), Mme/M. : <span class="colorSpan">${nomID} ${prenomID}</span></p>
         <p>Né(e) le :<span class="colorSpan">${birthdayID}</span></p>
         <p>À :<span class="colorSpan">${placeBirthID}</span></p>
         <p>Demeurant:<span class="colorSpan">${adresseID}</span></p>
@@ -196,7 +205,6 @@ function affichage_Attestation(tab)
         Déplacements pour motif familial impérieux, pour l’assistance aux personnesvulnérables ou la garde d’enfants.
         </p>
 
-
         <p class="case">
         <img src = ${listCaseIMG["handicap"]} ALIGN=LEFT>
         Déplacements des personnes en situation de handicap et de leur accompagnant.
@@ -206,7 +214,6 @@ function affichage_Attestation(tab)
         <img src = ${listCaseIMG["judiciaire"]} ALIGN=LEFT>
         Déplacements pour répondre à une convocation judiciaire ou administrative.
         </p>
-
 
         <p class="case">
         <img src = ${listCaseIMG["missions"]} ALIGN=LEFT>
@@ -232,10 +239,25 @@ function affichage_Attestation(tab)
         figure.appendChild(imgQR);
         figure.appendChild(figcaption);
     }
-
-
 }
 
-/*********************************** */
+//*************Service Worker ******************/
+//Register service worker to control making site work offline
+if('serviceWorker' in navigator)
+{
+	navigator.serviceWorker
+			 .register('/sw.js')
+			 .then(function() { console.log('Service Worker for Couvre-feu Registered'); });
+}
+
+/************Permettre le 100vh sur mobile */
+let vh = window.innerHeight * 0.01;
+const hauteur = window.innerHeight;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+const metas = document.getElementsByTagName('meta');
+metas[1].content = 'width=device-width, height=' + window.innerHeight + ' initial-scale=1.0, maximum-scale=5.0,user-scalable=0';
+
 
 

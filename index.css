@@ -26,6 +26,7 @@ body{
 legend{
     color: royalblue;
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 /***********Barre de Menu**********************/
@@ -37,8 +38,6 @@ legend{
     justify-content: space-around;
     background-color: rgba(0,0,0,0.1);
 }
-
-
 
 #divIcon input{
     width: 4rem;
@@ -53,7 +52,6 @@ legend{
     color: royalblue;
 }
 
-
 #divNewUser,#divNewAttest{
 	text-align: center;
 	height: 25vw;
@@ -66,16 +64,12 @@ legend{
     box-shadow: 4px 4px 2px -2px #919191;
 }
 
-
-
-
 #field_Attest input{
 	width: 20vw;
 	height: auto;
 	padding-top: 2vw;
 	padding-left: 1vw;
 }
-
 
 /********************Section Div Ligne Attestation*********************/
 .divLine{
@@ -86,7 +80,6 @@ legend{
     display: flex;
     box-shadow: 3px 4px 4px -1px #7F7F7F;
 }
-
 
 /********Section Oeil/Bin***********************/
 .divImg{
@@ -104,7 +97,6 @@ legend{
 .divBin{
     background-color: #e1f7f7;
 }
-
 
 /*******Section DivInfo***************/
 .divInfo{
@@ -160,12 +152,9 @@ legend{
 #output fieldset{
 	border-radius: 5px;
     border: 1px solid teal;
-    text-transform: capitalize;
-
 }
 
-
-#output span{
+.colorSpan{
     color: blue;
     font-weight: bold;
     text-transform: capitalize;
@@ -173,11 +162,7 @@ legend{
 
 #output p{
     font-family: 'Roboto', sans-serif;
-    font-size: 0.5rem;
-}
-
-p{
-    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
     width: 85vw;
 }
 
@@ -218,4 +203,4 @@ figcaption{
 }
 
 
-/***************/
+
