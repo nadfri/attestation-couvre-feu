@@ -4,7 +4,7 @@
     "short_name": "Couvre-Feu",
     "description": "Générateur d'attestation Numérique pour le couvre-feu Covid19",
     "theme_color": "#008080",
-    "background_color": "#393e46",
+    "background_color": "#008080",
     "display": "standalone",
     "orientation": "portrait",
     "start_url": "index.html",
