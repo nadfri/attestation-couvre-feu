@@ -243,12 +243,22 @@ function affichage_Attestation(tab)
 
 //*************Service Worker ******************/
 //Register service worker to control making site work offline
-if('serviceWorker' in navigator)
-{
-	navigator.serviceWorker
-			 .register('./sw.js', {scope: './'})
-			 .then(function() {console.log('Service Worker Dispo pour ce navigateur')});
-}
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register('./sw.js')
+        .then(registration => {
+          console.log(
+            `Service Worker enregistré ! Ressource: ${registration.scope}`
+          );
+        })
+        .catch(err => {
+          console.log(
+            `Echec de l'enregistrement du Service Worker: ${err}`
+          );
+        });
+    });
+  }
 
 
 /************Permettre le 100vh sur mobile */
