@@ -15,25 +15,29 @@
 <form id="form">
     <fieldset class="etatCivil">
         <legend>Etat Civil</legend>
-        <input id="prenom"     type="text" placeholder="Prénom" required autocomplete="off"><br>
-        <input id="nom"        type="text" placeholder="Nom" required autocomplete="off"><br>
+        <input id="prenom" type="text" placeholder="Prénom" required autocomplete="none">
+        <br>
+        <input id="nom" type="text" placeholder="Nom" required autocomplete="none">
+        <br>
     </fieldset>
     
     <fieldset class="vicopo-wrapper">
         <legend>Lieu de Naissance</legend>
-        <input id="birthday"   type="text" placeholder="Date de naissance" autocomplete="off" required>
-        <input id="cpNaiss" class="code"  type="number" min=1 max=99999 placeholder="Code Postal" autocomplete="off" required>
-        <input id="placeBirth" class="city" placeholder="Lieu de Naissance" autocomplete="off" required>
+        <input id="birthday"   type="text" placeholder="Date de naissance" required autocomplete="none">
+        <input id="cpNaiss" class="code"  type="number" min=1 max=99999 placeholder="Code Postal" required autocomplete="none">
+        <input id="placeBirth" class="city" placeholder="Lieu de Naissance" required autocomplete="none" >
+
         <div class="output"></div>
     
     </fieldset>
     
     <fieldset class="vicopo-wrapper">
         <legend>Domicile</legend>
-            <input id="adresse" type="text" placeholder="Adresse du domicile" required>
+            <input id="adresse" type="text" placeholder="Adresse du domicile" required autocomplete="none">
             <br>
-            <input id="codePostal" class="code" type="number" min=1 max=99999 placeholder="Code Postal" autocomplete="off" required>
-            <input id="city" class="city" placeholder="Ville" autocomplete="off" required>
+            <input id="codePostal" class="code" type="number" min=1 max=99999 placeholder="Code Postal" required autocomplete="none">
+            <input id="city" class="city" placeholder="Ville" required autocomplete="none">
+
             <div class="output"></div>
     </fieldset>
 
@@ -46,7 +50,7 @@
     <input type="image" src="img/list.png" onclick="document.location='index.html'">
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="codePostal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="codePostal.js"></script>
 </body>
 </html>

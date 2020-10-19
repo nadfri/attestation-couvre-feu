@@ -246,8 +246,8 @@ function affichage_Attestation(tab)
 if('serviceWorker' in navigator)
 {
 	navigator.serviceWorker
-			 .register('/sw.js', {scope: '/'})
-			 .then(function() { console.log('Service Worker for Couvre-feu Registered'); });
+			 .register('sw.js')
+			 .then(function() { console.log('Service Worker Dispo pour ce navigateur'); });
 }
 
 /************Permettre le 100vh sur mobile */

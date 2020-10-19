@@ -73,5 +73,5 @@ for (let input of inputs)
     };// form.checkValidity() retourne true/false en fonction de la validité
  }
 
+/******************AutoComplete OFF***************** */
 
-/*********************************** */

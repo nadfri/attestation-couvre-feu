@@ -5,7 +5,7 @@ jQuery(function ($) {
 	var _cache = {};
   // Utilisation du HTTPS ou non selon le protocole de la page actuelle
 	var _host = ~(location.protocol + '').indexOf('s')
-		? 'https://www.selfbuild.fr/vicopo'
+		? 'https://vicopo.selfbuild.fr'
 		: 'http://vicopo.selfbuild.fr';
   // Si le code postal ne commence pas par un chiffre, c'est une ville, on passe dans le champ ville avec la valeur courante
 	_code.keyup(function () {

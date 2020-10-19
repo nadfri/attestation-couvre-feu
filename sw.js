@@ -3,11 +3,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox
 if (workbox) {
   console.log(`WorkBox of Couvre-Feu loaded🎉`);
   workbox.routing.registerRoute(
-    new RegExp('.+/.+'), //cached all files
+    new RegExp('/*'), //cached all files
     new workbox.strategies.StaleWhileRevalidate()
   );
 } else {console.log(`Boo! Workbox didn't load 😬`);}
-
-// This will work!
-
-
