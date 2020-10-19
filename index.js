@@ -246,7 +246,7 @@ function affichage_Attestation(tab)
 if('serviceWorker' in navigator)
 {
 	navigator.serviceWorker
-			 .register('/attestation-couvre-feu/sw.js', {scope: '/attestation-couvre-feu/'})
+			 .register('/sw.js', {scope: '/'})
 			 .then(function() { console.log('Service Worker for Couvre-feu Registered'); });
 }
 
