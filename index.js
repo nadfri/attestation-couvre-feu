@@ -246,9 +246,10 @@ function affichage_Attestation(tab)
 if('serviceWorker' in navigator)
 {
 	navigator.serviceWorker
-			 .register('sw.js')
-			 .then(function() { console.log('Service Worker Dispo pour ce navigateur'); });
+			 .register('./sw.js', {scope: './'})
+			 .then(function() {console.log('Service Worker Dispo pour ce navigateur')});
 }
+
 
 /************Permettre le 100vh sur mobile */
 let vh = window.innerHeight * 0.01;
