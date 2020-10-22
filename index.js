@@ -246,7 +246,7 @@ function affichage_Attestation(tab)
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker
-        .register('./sw.js')
+        .register('sw.js')
         .then(registration => {
           console.log(
             `Service Worker enregistré ! Ressource: ${registration.scope}`
