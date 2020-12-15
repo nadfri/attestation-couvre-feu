@@ -1,8 +1,8 @@
 {
     "lang" : "fr",
-    "name": "Attestation Couvre-feu",
-    "short_name": "Couvre-Feu",
-    "description": "Générateur d'attestation Numérique pour le couvre-feu Covid19",
+    "name": "Attestation V2",
+    "short_name": "Covid",
+    "description": "Générateur d'attestation Numérique pour le Covid19 Version 2.0",
     "theme_color": "#008080",
     "background_color": "#008080",
     "display": "standalone",
@@ -23,6 +23,12 @@
         "src": "img/icons/icon-512x512.png",
         "sizes": "512x512",
         "type": "image/png"
+      },
+      {
+        "src": "img/icons/maskable_icon.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
       }
     ],
     "splash_pages": "null"

@@ -5,8 +5,9 @@
     <title>Liste Utilisateurs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="listUsers.css">
-    <script src="listUsers.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="./css/listUsers.css">
+    <script src="./script/listUsers.js" defer></script>
+    <script src="./script/codePostal.js" defer></script>
 </head>
 <body>
 
@@ -36,7 +37,6 @@
     
     <fieldset class="vicopo-wrapper">
         <legend>Lieu de Naissance</legend>
-        <input id="cpNaiss" class="code"  type="number" min=1 max=99999 placeholder="Code Postal" autocomplete="none" required>
         <input id="placeBirth" class="city" placeholder="Lieu de Naissance" autocomplete="none" required>
         
         <div class="output"></div>
@@ -75,6 +75,5 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="codePostal.js"></script>
 </body>
 </html>

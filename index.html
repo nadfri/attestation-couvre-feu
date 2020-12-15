@@ -2,19 +2,21 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-    <title>Attestation Couvre-feu 2020</title>
+    <title>Couvre-Feu Covid19</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="Description" content="Application pour générer facilement vos attestations numériques COVID-19 pour le couvre-feu Octobre 2020">        
+    <meta name="Description" content="Application pour générer facilement vos attestations numériques COVID-19 Octobre 2020">        
     <meta name="Robots" content="all">
     <meta name="author" content="NadfriJS" />
     <meta name="theme-color" content="#008080">
     <link rel='manifest' href='manifest.json'>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script src="index.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <script src="./script/index.js" defer></script>
 </head>
 <body>
+
+<div id="overlay"></div>
 
 <fieldset id="field_Attest">
     <legend>Liste des attestations</legend>
@@ -35,7 +37,7 @@
 
 </fieldset>
 
-<div id="divPopUp">
+<div id="divPopUp" class="divPopUp">
     <p>Etes vous certain de vouloir supprimer cette Attestation?</p>
     <div class="btPopUp">
         <button id="bt_oui">Oui</button>
@@ -43,7 +45,7 @@
     </div>
 </div>
 
-<div id="output"></div>
+<div id="output" class="output"></div>
 
 
 <div id="divIcon">
@@ -52,6 +54,6 @@
     <input type="image" src="img/userIcon.png" onclick="document.location='newUser.html'">
 </div>
 
-
+<button id="installBtn" class="installBtn">Installer l'application 👍</button>
 </body>
 </html>

@@ -5,8 +5,9 @@
     <title>Nouvel Utilisateur</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="newUser.css">
-    <script src="newUser.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="./css/newUser.css">
+    <script src="./script/newUser.js" defer></script>
+    <script src="./script/codePostal.js" defer></script>
 </head>
 <body>
 
@@ -22,10 +23,9 @@
     </fieldset>
     
     <fieldset class="vicopo-wrapper">
-        <legend>Lieu de Naissance</legend>
-        <input id="birthday"   type="text" placeholder="Date de naissance" required autocomplete="none">
-        <input id="cpNaiss" class="code"  type="number" min=1 max=99999 placeholder="Code Postal" required autocomplete="none">
-        <input id="placeBirth" class="city" placeholder="Lieu de Naissance" required autocomplete="none" >
+        <legend>Naissance</legend>
+        <input id="birthday"   type="text" placeholder="Date de naissance" required>
+        <input id="placeBirth" type="text" class="city" placeholder="Lieu de Naissance" required autocomplete="none" >
 
         <div class="output"></div>
     
@@ -51,6 +51,5 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="codePostal.js"></script>
 </body>
 </html>
