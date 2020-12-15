@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/***************Enleve les effets chrome sur les input/button********/
+input[type=image]:focus {outline:0;}
+*{ -webkit-tap-highlight-color: rgba(0,0,0,0);
+   -webkit-tap-highlight-color: transparent; /* For some Androids */ 
+} 
+/************************************/
+body{
+	margin: 0;	
+    background: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+}
+
+/***************Section Fieldset********************/
+#field_Attest{
+	border-radius: 5px;
+	border: 1px solid teal;
+    text-transform: capitalize;
+    max-height: 87vh;
+    overflow-y: auto;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    box-shadow: 3px 1px 2px 1px #d8d8d8;
+    transition: all 1s;
+}
+
+legend{
+    color: royalblue;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/***********Barre de Menu**********************/
+#divIcon{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(0,0,0,0.1);
+    transition: all 0.5s;
+}
+
+#divIcon input{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    box-shadow: 4px 4px 2px -2px #919191;
+}
+
+.hidden{
+    transform: translateY(100%);
+
+}
+
+/***********Section Div No User/No Attestation********************/
+#div_NoUser,#div_NoAttest{
+    text-align: center;
+    color: royalblue;
+}
+
+#divNewUser,#divNewAttest{
+	text-align: center;
+	height: 25vw;
+	width: 25vw;
+	border-radius: 50%;
+	border: ridge 5px teal;
+	margin: auto;
+	margin-top: 1vh;
+    background-color:springGreen;
+    box-shadow: 4px 4px 2px -2px #919191;
+}
+
+
+#field_Attest input{
+	width: 20vw;
+	height: auto;
+	padding-top: 2vw;
+	padding-left: 1vw;
+}
+
+/********************Section Div Ligne Attestation*********************/
+.divLine{
+    border-radius: 5px;
+    background-color: white;
+    margin-bottom: 0.5vh;
+    font-size: smaller;
+    display: flex;
+    box-shadow: 3px 4px 4px -1px #7F7F7F;
+    min-height: 11vh;
+    transition: all 0.5s;
+}
+
+.slideRight{
+    transform: translate(150%);
+}
+
+/********Section Oeil/Bin***********************/
+.divImg{
+    width: 10%;
+    max-width: 75px;
+    display: flex;
+}
+
+.divImg img{
+    width: 100%;
+	height: auto;
+    cursor: pointer;
+    margin: auto;
+    transition: all 0.7s;
+}
+
+.divBin{
+    background-color: #e1f7f7;
+    border-bottom-right-radius: 5px;
+}
+
+.divImg img:active{
+    transform: scale(5);
+}
+
+/*******Section DivInfo***************/
+.divInfo{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1vw;
+}
+
+.spanDate, .spanMotif{
+    font-style: oblique;
+}
+
+.spanMotif{
+    color: blue;
+}
+
+/*************Section Pop Up********************/
+.divPopUp{
+    display: none;
+    position: absolute;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 10px;
+    top: 35%;
+    height: 22%;
+    border-radius: 5px;
+    color: royalblue;
+
+    z-index:1;
+    background-color: white;
+    text-align: center;
+    box-shadow: 3px 4px 4px -1px #7F7F7F;
+}
+
+.bigger{
+    -webkit-animation: bigger 0.5s;
+            animation: bigger 0.5s;
+}
+
+.smaller{
+    -webkit-animation: smaller 0.5s both;
+            animation: smaller 0.5s both;
+}
+
+@-webkit-keyframes bigger{
+    from{ transform: scale3d(0,0,0);}
+    to  { transform: scale3d(1,1,1);}
+}
+
+@keyframes bigger{
+    from{ transform: scale3d(0,0,0);}
+    to  { transform: scale3d(1,1,1);}
+}
+
+@-webkit-keyframes smaller{
+    from{ transform: scale3d(1,1,1);}
+    to  { transform: scale3d(0,0,0);}
+}
+
+@keyframes smaller{
+    from{ transform: scale3d(1,1,1);}
+    to  { transform: scale3d(0,0,0);}
+}
+
+.btPopUp{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btPopUp button{
+    border: none;
+    width: 30%;
+    height: 5vh;
+    box-shadow: 4px 4px 2px -2px #919191;
+}
+
+
+/*****************Attestation Ecrite********************************/
+.output{
+    overflow:auto ;
+    background-color: white;
+    transition: all 0.3s;
+    height: fit-content;
+}
+
+.retrecissement{
+    transform: rotate3d(0,1,0,90deg);
+}
+
+
+.output fieldset{
+	border-radius: 5px;
+    border: 1px solid teal;
+}
+
+.colorSpan{
+    color: blue;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.output p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    width: 85vw;
+}
+
+h1{
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0;
+}
+
+h2{
+    text-align: center;
+    font-size: 0.5rem;
+}
+
+.case{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.case img{
+    min-width: 2rem;
+    height: 2rem;
+    margin-right: 0.4rem;
+    box-shadow: 3px 4px 2px -2px #919191;
+}
+
+
+/*************QR CODE***********/
+
+figure{
+    text-align: center;
+
+}
+
+figure img{
+    width: 66vw;
+    height: 66vw;
+    background-image: url(../img/Infinity.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all .5s;
+    z-index: 1;
+}
+
+figcaption{
+    font-size: 0.6rem;
+}
+
+.scale{
+    transform: scale(1.4) translateY(-50%);
+}
+
+/**Overlay**/
+#overlay{
+    display: none;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    background-color: black;
+    opacity: 0.5;
+}
+
+
+/**************Bouton installer********/
+.installBtn{
+    position: fixed;
+    bottom: 4rem;
+    left: -100%;
+    height: 3rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: teal;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+  }
+
+  .slide{
+    transform: translateX(100%);
+  }
