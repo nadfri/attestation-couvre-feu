@@ -16,16 +16,16 @@
 <form id="form">
     <fieldset class="etatCivil">
         <legend>Etat Civil</legend>
-        <input id="prenom" type="text" placeholder="Prénom" required autocomplete="none">
+        <input id="prenom" type="text" placeholder="Prénom" required autocomplete="none" class="inputs">
         <br>
-        <input id="nom" type="text" placeholder="Nom" required autocomplete="none">
+        <input id="nom" type="text" placeholder="Nom" required autocomplete="none" class="inputs">
         <br>
     </fieldset>
     
     <fieldset class="vicopo-wrapper">
         <legend>Naissance</legend>
-        <input id="birthday"   type="text" placeholder="Date de naissance" required>
-        <input id="placeBirth" type="text" class="city" placeholder="Lieu de Naissance" required autocomplete="none" >
+        <input id="birthday"   type="text" placeholder="Date de naissance" required class="inputs">
+        <input id="placeBirth" type="text" class="city" placeholder="Lieu de Naissance" required class="inputs">
 
         <div class="output"></div>
     
@@ -33,9 +33,9 @@
     
     <fieldset class="vicopo-wrapper">
         <legend>Domicile</legend>
-            <input id="adresse" type="text" placeholder="Adresse du domicile" required autocomplete="none">
+            <input id="adresse" type="text" placeholder="Adresse du domicile" required autocomplete="none" class="inputs">
             <br>
-            <input id="codePostal" class="code" type="number" min=1 max=99999 placeholder="Code Postal" required autocomplete="none">
+            <input id="codePostal" class="code" type="number" min=1 max=99999 placeholder="Code Postal" required autocomplete="none" class="inputs">
             <input id="city" class="city" placeholder="Ville" required autocomplete="none">
 
             <div class="output"></div>

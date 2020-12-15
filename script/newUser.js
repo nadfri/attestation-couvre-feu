@@ -68,12 +68,13 @@ form.onsubmit= (e) =>
 let inputs = document.querySelectorAll("#form input");
 for (let input of inputs)
 {
-    input.oninput = () => 
+    input.onblur = () => 
     {
-        if (form.checkValidity()) divAjouter.style.backgroundColor = "springGreen";
+        if (form.checkValidity()) 
+             divAjouter.style.backgroundColor = "springGreen";
+
         else divAjouter.style.backgroundColor = "pink";
     };// form.checkValidity() retourne true/false en fonction de la validité
  }
 
-/******************AutoComplete OFF***************** */
 

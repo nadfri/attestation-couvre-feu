@@ -11,7 +11,9 @@ let count_users = 0; //sert à compter les checkbox
 let options = {day: "2-digit", month: "2-digit", year:"numeric"};
 dateSortie.value =  Intl.DateTimeFormat("fr-CA",options).format(Date.now());
 //fr-CA permet d'avoir une date conforme mm-dd-yyyy
-heureSortie.value =  Intl.DateTimeFormat("fr-FR",{hour: "numeric", minute: "numeric"}).format(Date.now());
+//heureSortie.value =  Intl.DateTimeFormat("fr-FR",{hour: "numeric", minute: "numeric"}).format(Date.now());
+let heureNow = Intl.DateTimeFormat("fr-FR",{hour: "numeric", minute: "numeric"}).format(Date.now());
+heureSortie.value = ( "20:00" > heureNow && heureNow > "06:00")? "20:00" : heureNow;
 
 
 //**************************Affichage Liste Users************************************************ */
@@ -68,10 +70,10 @@ for (let user of tabUsers)
 let inputs = document.querySelectorAll(".inputs");
 for (let input of inputs)
 {
-    input.onchange = () => 
+    input.oninput = () => 
     {
         if (form.checkValidity() && count_users != 0) 
-        divAjouter.style.backgroundColor = "springGreen";
+             divAjouter.style.backgroundColor = "springGreen";
         else divAjouter.style.backgroundColor = "pink";
     };// form.checkValidity() retourne true/false en fonction de la validité
  }
