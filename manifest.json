@@ -1,7 +1,7 @@
 {
     "lang" : "fr",
-    "name": "Attestation V2",
-    "short_name": "Covid",
+    "name": "Couvre-Feu Covid19",
+    "short_name": "CouvreFeu",
     "description": "Générateur d'attestation Numérique pour le Covid19 Version 2.0",
     "theme_color": "#008080",
     "background_color": "#008080",
@@ -30,6 +30,5 @@
         "type": "image/png",
         "purpose": "any maskable"
       }
-    ],
-    "splash_pages": "null"
+    ]
   }

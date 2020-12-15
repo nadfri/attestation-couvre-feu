@@ -293,24 +293,24 @@ window.onbeforeinstallprompt = (event) =>
 
 //*************Service Worker ******************/
 //Register service worker to control making site work offline
-// if ('serviceWorker' in navigator) 
-// {
-//     window.addEventListener('load', () => 
-//     {
-//       navigator.serviceWorker
-//         .register('sw.js')
-//         .then(registration => {
-//           console.log(
-//             `Service Worker enregistré ! Ressource: ${registration.scope}`
-//           );
-//         })
-//         .catch(err => {
-//           console.log(
-//             `Echec de l'enregistrement du Service Worker: ${err}`
-//           );
-//         });
-//     });
-// }
+if ('serviceWorker' in navigator) 
+{
+    window.addEventListener('load', () => 
+    {
+      navigator.serviceWorker
+        .register('./script/sw.js')
+        .then(registration => {
+          console.log(
+            `Service Worker enregistré ! Ressource: ${registration.scope}`
+          );
+        })
+        .catch(err => {
+          console.log(
+            `Echec de l'enregistrement du Service Worker: ${err}`
+          );
+        });
+    });
+}
 
 
 /************Permettre le 100vh sur mobile */
