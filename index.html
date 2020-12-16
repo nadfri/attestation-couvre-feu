@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <title>Couvre-Feu Covid19</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="Description" content="Application pour générer facilement vos attestations numériques COVID-19 Octobre 2020">        
+    <meta name="Description"
+        content="Application pour générer facilement vos attestations numériques COVID-19 Octobre 2020">
     <meta name="Robots" content="all">
     <meta name="author" content="NadfriJS" />
     <meta name="theme-color" content="#008080">
@@ -13,47 +15,59 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" type="text/css" href="./css/index.css">
     <script src="./script/index.js" defer></script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7H13L922W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Z7H13L922W');
+    </script>
 </head>
+
 <body>
 
-<div id="overlay"></div>
+    <div id="overlay"></div>
 
-<fieldset id="field_Attest">
-    <legend>Liste des attestations</legend>
+    <fieldset id="field_Attest">
+        <legend>Liste des attestations</legend>
 
-    <div id="div_NoUser">
-        <p>Créér un nouvel Utilisateur</p>
-        <div id="divNewUser">
-            <input id="bt_newUser2" type="image" src="img/newUser.png" onclick="document.location='newUser.html'">
+        <div id="div_NoUser">
+            <p>Créér un nouvel Utilisateur</p>
+            <div id="divNewUser">
+                <input id="bt_newUser2" type="image" src="img/newUser.png" onclick="document.location='newUser.html'">
+            </div>
+        </div>
+
+        <div id="div_NoAttest">
+            <p>Créér une nouvelle Attestation</p>
+            <div id="divNewAttest">
+                <input id="bt_newAttest2" type="image" src="img/doc.png" onclick="document.location='newAttest.html'">
+            </div>
+        </div>
+
+    </fieldset>
+
+    <div id="divPopUp" class="divPopUp">
+        <p>Etes vous certain de vouloir supprimer cette Attestation?</p>
+        <div class="btPopUp">
+            <button id="bt_oui">Oui</button>
+            <button id="bt_non">Non</button>
         </div>
     </div>
 
-    <div id="div_NoAttest">
-        <p>Créér une nouvelle Attestation</p>
-        <div id="divNewAttest">
-            <input id="bt_newAttest2" type="image" src="img/doc.png" onclick="document.location='newAttest.html'">
-        </div>
+    <div id="output" class="output"></div>
+
+
+    <div id="divIcon">
+        <input type="image" src="img/contact.png" onclick="document.location='listusers.html'">
+        <input type="image" src="img/attestIcon.png" onclick="document.location='newattest.html'" id="bt_newAttest">
+        <input type="image" src="img/userIcon.png" onclick="document.location='newuser.html'">
     </div>
 
-</fieldset>
-
-<div id="divPopUp" class="divPopUp">
-    <p>Etes vous certain de vouloir supprimer cette Attestation?</p>
-    <div class="btPopUp">
-        <button id="bt_oui">Oui</button>
-        <button id="bt_non">Non</button>
-    </div>
-</div>
-
-<div id="output" class="output"></div>
-
-
-<div id="divIcon">
-    <input type="image" src="img/contact.png"    onclick="document.location='listusers.html'">
-    <input type="image" src="img/attestIcon.png" onclick="document.location='newattest.html'" id="bt_newAttest">
-    <input type="image" src="img/userIcon.png"   onclick="document.location='newuser.html'">
-</div>
-
-<button id="installBtn" class="installBtn">Installer l'application 👍</button>
+    <button id="installBtn" class="installBtn">Installer l'application 👍</button>
 </body>
+
 </html>
