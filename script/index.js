@@ -1,40 +1,36 @@
 "use strict";
 /*********************************** */
-let tabUsers = (JSON.parse(localStorage.getItem('usersList')) != null)? 
-JSON.parse(localStorage.getItem('usersList')): [];
+let tabUsers = (JSON.parse(localStorage.getItem('usersList')) != null) ?
+    JSON.parse(localStorage.getItem('usersList')) : [];
 
-let listAttest_Storage = (JSON.parse(localStorage.getItem('listAttest_Storage')) != null)? 
-JSON.parse(localStorage.getItem('listAttest_Storage')): [];
+let listAttest_Storage = (JSON.parse(localStorage.getItem('listAttest_Storage')) != null) ?
+    JSON.parse(localStorage.getItem('listAttest_Storage')) : [];
 //console.table(listAttest_Storage);
 
 
 //**********/Désactivation du bouton new Attestation si No User et de la div_NoUser***/
-if(tabUsers.length == 0) 
-{
+if (tabUsers.length == 0) {
     bt_newAttest.disabled = true; //desactive le bouton new Attestation
     bt_newAttest.src = "img/attestIcon2.png";
     div_NoUser.style.display = "block"; //affiche la div_NoUser   
-}
-else 
-{
+} else {
     bt_newAttest.disabled = false; //active le bouton
     bt_newAttest.src = "img/attestIcon.png";
     div_NoUser.style.display = "none"; //masque la div div_NoUser
 }
 
-if(listAttest_Storage.length == 0 && tabUsers.length != 0)
+if (listAttest_Storage.length == 0 && tabUsers.length != 0)
     div_NoAttest.style.display = "block"; //affiche la div div_NoAttest
 else
     div_NoAttest.style.display = "none"; //masque la div div_NoAttest
 
 
 //**************************Liste Attestations************************************************ */
-for(let attestation of listAttest_Storage)
-{
+for (let attestation of listAttest_Storage) {
     const divLine = document.createElement("div");
     divLine.className = "divLine"; //conteneur
 
-//*** */
+    //*** */
     const divEye = document.createElement("div");
     divEye.className = "divImg";
     const imgEye = document.createElement("img");
@@ -42,13 +38,13 @@ for(let attestation of listAttest_Storage)
     imgEye.classList.add("eye");
     divEye.appendChild(imgEye);
 
-//*** */
+    //*** */
     const divInfo = document.createElement("div");
     divInfo.className = "divInfo";
 
     let listPrenoms = "";
-    for(let user of attestation.listNom)
-        listPrenoms +=  `${user.prenom}, `;
+    for (let user of attestation.listNom)
+        listPrenoms += `${user.prenom}, `;
 
     const spanListPrenom = document.createElement("span");
     spanListPrenom.textContent = listPrenoms;
@@ -65,12 +61,12 @@ for(let attestation of listAttest_Storage)
     divInfo.appendChild(spanDate);
     divInfo.appendChild(spanMotif);
 
- //**** */
+    //**** */
     const divBin = document.createElement("div");
     divBin.className = "divImg divBin";
     const imgBin = document.createElement("img");
     imgBin.src = "img/bin.png";
-    imgBin.setAttribute("ref",attestation.id); //ajout d'un attribut d'identification
+    imgBin.setAttribute("ref", attestation.id); //ajout d'un attribut d'identification
     divBin.appendChild(imgBin);
 
     field_Attest.appendChild(divLine);
@@ -80,28 +76,26 @@ for(let attestation of listAttest_Storage)
 
 
     //****************Bouton supprimer Attestation********************************** */
-    imgBin.onclick = (e) =>
-    {
+    imgBin.onclick = (e) => {
         divPopUp.classList.add("bigger");
         divPopUp.style.display = "block"; //affiche le pop up de confirmation
         overlay.style.display = "block";
         divIcon.classList.add("hidden");
 
         bt_non.onclick = () => {
-            divPopUp.classList.replace("bigger","smaller");
+            divPopUp.classList.replace("bigger", "smaller");
 
-            setTimeout(()=>
-            {
+            setTimeout(() => {
                 divPopUp.style.display = "none";
                 overlay.style.display = "none";
                 divIcon.classList.remove("hidden");
                 divPopUp.classList.remove("smaller");
 
-            },500);
+            }, 500);
         };
 
         bt_oui.onclick = () => {
-            listAttest_Storage = listAttest_Storage.filter(attestation => 
+            listAttest_Storage = listAttest_Storage.filter(attestation =>
                 attestation.id != e.target.getAttribute("ref"));
             //filtre le tableau en retirant l'attestation ayant l'id correspondante à la ref de imgBin
             localStorage.setItem("listAttest_Storage", JSON.stringify(listAttest_Storage));
@@ -112,40 +106,36 @@ for(let attestation of listAttest_Storage)
             divIcon.classList.remove("hidden");
 
             divLine.classList.add("slideRight");
-            setTimeout(()=>divLine.remove(),500);
+            setTimeout(() => divLine.remove(), 500);
         };
     };
 
     //****************Bouton Voir Attestation **************************************/
-    divLine.onclick = (e) => 
-    {
-        if(!Object.is(e.target, imgBin) && imgEye.getAttribute("src") == "img/oeil.png") //ne tient pas compte du click sur ImgBin
+    divLine.onclick = (e) => {
+        if (!Object.is(e.target, imgBin) && imgEye.getAttribute("src") == "img/oeil.png") //ne tient pas compte du click sur ImgBin
         {
             //On remet tous les yeux à ouvert
-            const imgEyes = document.querySelectorAll(".eye"); 
+            const imgEyes = document.querySelectorAll(".eye");
             for (let img of imgEyes) img.src = "img/oeil.png";
 
             affichage_Attestation(attestation);
-            document.querySelector("h1").scrollIntoView({behavior: "smooth"}); //scroll vers le h1 de l'attestation
+            document.querySelector("h1").scrollIntoView({ behavior: "smooth" }); //scroll vers le h1 de l'attestation
             imgEye.src = "img/oeil_close.png";
-        }
-
-        else
-        {
+        } else {
             output.classList.add("retrecissement");
             imgEye.src = "img/oeil.png";
 
-            setTimeout(()=>{
+            setTimeout(() => {
                 output.innerHTML = "";
                 output.classList.remove("retrecissement");
-            },300); //vide la div
+            }, 300); //vide la div
         }
     };
-} 
+}
 
 
 //*********************Masquer la barre de Menu lors du scroll */
-document.onscroll = () =>{
+document.onscroll = () => {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50)
         divIcon.classList.add("hidden");
 
@@ -154,34 +144,32 @@ document.onscroll = () =>{
 }
 
 //************************Affichage des Attestions Ecrites/QRCODE********************* */
-function affichage_Attestation(tab)
-{
+function affichage_Attestation(tab) {
     output.innerHTML = ""; //vide la div d'affichage
 
-    for(let user of tab.listNom)
-    {
-       let prenomID      = user.prenom;
-       let nomID         = user.nom;
-       let birthdayID    = user.birthday;
-       let placeBirthID  = user.placeBirth;
-       let adresseID     = `${user.adresse} ${user.codePostal} ${user.ville}`;
-       let cityID        = user.ville;
+    for (let user of tab.listNom) {
+        let prenomID = user.prenom;
+        let nomID = user.nom;
+        let birthdayID = user.birthday;
+        let placeBirthID = user.placeBirth;
+        let adresseID = `${user.adresse} ${user.codePostal} ${user.ville}`;
+        let cityID = user.ville;
 
-       let dateSortieID    = tab.dateSortie;
-       let heureSortieID   = tab.heureSortie;
+        let dateSortieID = tab.dateSortie;
+        let heureSortieID = tab.heureSortie;
 
-       let listCaseIMG            = [];
-       listCaseIMG["travail"]     = "img/case.png";
-       listCaseIMG["santé"]       = "img/case.png";
-       listCaseIMG["famille"]     = "img/case.png";
-       listCaseIMG["handicap"]    = "img/case.png";
-       listCaseIMG["animaux"]     = "img/case.png";
-       listCaseIMG["convocation"] = "img/case.png";
-       listCaseIMG["missions"]    = "img/case.png";
-       listCaseIMG["transit"]     = "img/case.png";
-       listCaseIMG[tab.motif]     = "img/caseValid.png";
+        let listCaseIMG = [];
+        listCaseIMG["travail"] = "img/case.png";
+        listCaseIMG["santé"] = "img/case.png";
+        listCaseIMG["famille"] = "img/case.png";
+        listCaseIMG["handicap"] = "img/case.png";
+        listCaseIMG["animaux"] = "img/case.png";
+        listCaseIMG["convocation"] = "img/case.png";
+        listCaseIMG["missions"] = "img/case.png";
+        listCaseIMG["transit"] = "img/case.png";
+        listCaseIMG[tab.motif] = "img/caseValid.png";
 
-    //*****************QRCODE******************* */
+        //*****************QRCODE******************* */
         const imgQR = document.createElement("img");
         let info = `Créé le:${tab.dateCreation} à ${tab.heureCreation}%3B
                     Nom:${user.nom}%3B
@@ -191,9 +179,9 @@ function affichage_Attestation(tab)
                     Sortie:${tab.dateSortie} à ${tab.heureSortie}%3B
                     Motifs:${tab.motif}%3B
                     `;
-    
+
         //APi en ligne pour generer le QRCODE
-        imgQR.src = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&ecc=M&data="+info;
+        imgQR.src = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&ecc=M&data=" + info;
         //imgQR.alt = "QR Code en attente de connexion...";
 
         const figure = document.createElement("figure");
@@ -201,13 +189,12 @@ function affichage_Attestation(tab)
         figcaption.textContent = `Date de création: ${tab.dateCreation} à ${tab.heureCreation}`;
 
 
-        imgQR.onclick = () => 
-        {
+        imgQR.onclick = () => {
             imgQR.classList.toggle("scale"); //zoom sur le QRCode
-            overlay.style.display = imgQR.classList.contains("scale")? "block" : "none";
+            overlay.style.display = imgQR.classList.contains("scale") ? "block" : "none";
         };
 
-    
+
         //*********************Version Ecrite******************** */
         const fieldset = document.createElement("fieldset");
         let legend = document.createElement("legend");
@@ -276,39 +263,35 @@ function affichage_Attestation(tab)
 }
 
 /**Bouton Installation Application*/
-window.onbeforeinstallprompt = (event) => 
-{
+window.onbeforeinstallprompt = (event) => {
     event.preventDefault(); // annuler la banniere par defaut
     installBtn.classList.add("slide"); //affiche la banniere perso
-    setTimeout(()=>installBtn.classList.remove("slide"),8000);
-    setTimeout(()=>installBtn.style.display = "none",9000);
+    setTimeout(() => installBtn.classList.remove("slide"), 8000);
+    setTimeout(() => installBtn.style.display = "none", 9000);
 
-    installBtn.onclick = () => 
-    {
+    installBtn.onclick = () => {
         installBtn.classList.remove("slide"); //faire disparaitre le bouton
-        setTimeout(()=>installBtn.style.display = "none",500);
+        setTimeout(() => installBtn.style.display = "none", 500);
         event.prompt(); //permettre l'installation
     };
 };
 
 //*************Service Worker ******************/
 //Register service worker to control making site work offline
-if ('serviceWorker' in navigator) 
-{
-    window.addEventListener('load', () => 
-    {
-      navigator.serviceWorker
-        .register('./sw.js')
-        .then(registration => {
-          console.log(
-            `Service Worker enregistré ! Ressource: ${registration.scope}`
-          );
-        })
-        .catch(err => {
-          console.log(
-            `Echec de l'enregistrement du Service Worker: ${err}`
-          );
-        });
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker
+            .register('./sw.js')
+            .then(registration => {
+                console.log(
+                    `Service Worker enregistré ! Ressource: ${registration.scope}`
+                );
+            })
+            .catch(err => {
+                console.log(
+                    `Echec de l'enregistrement du Service Worker: ${err}`
+                );
+            });
     });
 }
 
@@ -321,6 +304,3 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 const metas = document.getElementsByTagName('meta');
 metas[1].content = 'width=device-width, height=' + window.innerHeight + ' initial-scale=1.0, maximum-scale=5.0,user-scalable=0';
-
-
-
