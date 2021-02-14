@@ -1,19 +1,28 @@
 /***************Enleve les effets chrome sur les input/button********/
-input[type=image]:focus {outline:0;}
-*{ -webkit-tap-highlight-color: rgba(0,0,0,0);
-   -webkit-tap-highlight-color: transparent; /* For some Androids */ 
-} 
+
+input[type=image]:focus {
+    outline: 0;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    /* For some Androids */
+}
+
 /************************************/
-body{
-	margin: 0;	
+
+body {
+    margin: 0;
     background: #f4f4f4;
     font-family: 'Roboto', sans-serif;
 }
 
 /***************Section Fieldset********************/
-#field_Attest{
-	border-radius: 5px;
-	border: 1px solid teal;
+
+#field_Attest {
+    border-radius: 5px;
+    border: 1px solid teal;
     text-transform: capitalize;
     max-height: 87vh;
     overflow-y: auto;
@@ -23,63 +32,64 @@ body{
     transition: all 1s;
 }
 
-legend{
+legend {
     color: royalblue;
     font-weight: bold;
     text-transform: capitalize;
 }
 
 /***********Barre de Menu**********************/
-#divIcon{
+
+#divIcon {
     position: fixed;
     bottom: 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     transition: all 0.5s;
 }
 
-#divIcon input{
+#divIcon input {
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
     box-shadow: 4px 4px 2px -2px #919191;
 }
 
-.hidden{
+.hidden {
     transform: translateY(100%);
-
 }
 
 /***********Section Div No User/No Attestation********************/
-#div_NoUser,#div_NoAttest{
+
+#div_NoUser, #div_NoAttest {
     text-align: center;
     color: royalblue;
 }
 
-#divNewUser,#divNewAttest{
-	text-align: center;
-	height: 25vw;
-	width: 25vw;
-	border-radius: 50%;
-	border: ridge 5px teal;
-	margin: auto;
-	margin-top: 1vh;
-    background-color:springGreen;
+#divNewUser, #divNewAttest {
+    text-align: center;
+    height: 25vw;
+    width: 25vw;
+    border-radius: 50%;
+    border: ridge 5px teal;
+    margin: auto;
+    margin-top: 1vh;
+    background-color: springGreen;
     box-shadow: 4px 4px 2px -2px #919191;
 }
 
-
-#field_Attest input{
-	width: 20vw;
-	height: auto;
-	padding-top: 2vw;
-	padding-left: 1vw;
+#field_Attest input {
+    width: 20vw;
+    height: auto;
+    padding-top: 2vw;
+    padding-left: 1vw;
 }
 
 /********************Section Div Ligne Attestation*********************/
-.divLine{
+
+.divLine {
     border-radius: 5px;
     background-color: white;
     margin-bottom: 0.5vh;
@@ -90,36 +100,38 @@ legend{
     transition: all 0.5s;
 }
 
-.slideRight{
+.slideRight {
     transform: translate(150%);
 }
 
 /********Section Oeil/Bin***********************/
-.divImg{
+
+.divImg {
     width: 10%;
     max-width: 75px;
     display: flex;
 }
 
-.divImg img{
+.divImg img {
     width: 100%;
-	height: auto;
+    height: auto;
     cursor: pointer;
     margin: auto;
     transition: all 0.7s;
 }
 
-.divBin{
+.divBin {
     background-color: #e1f7f7;
     border-bottom-right-radius: 5px;
 }
 
-.divImg img:active{
+.divImg img:active {
     transform: scale(5);
 }
 
 /*******Section DivInfo***************/
-.divInfo{
+
+.divInfo {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -127,16 +139,17 @@ legend{
     margin-left: 1vw;
 }
 
-.spanDate, .spanMotif{
+.spanDate, .spanMotif {
     font-style: oblique;
 }
 
-.spanMotif{
+.spanMotif {
     color: blue;
 }
 
 /*************Section Pop Up********************/
-.divPopUp{
+
+.divPopUp {
     display: none;
     position: absolute;
     margin-left: 10%;
@@ -146,120 +159,131 @@ legend{
     height: 22%;
     border-radius: 5px;
     color: royalblue;
-
-    z-index:1;
+    z-index: 1;
     background-color: white;
     text-align: center;
     box-shadow: 3px 4px 4px -1px #7F7F7F;
 }
 
-.bigger{
+.bigger {
     -webkit-animation: bigger 0.5s;
-            animation: bigger 0.5s;
+    animation: bigger 0.5s;
 }
 
-.smaller{
+.smaller {
     -webkit-animation: smaller 0.5s both;
-            animation: smaller 0.5s both;
+    animation: smaller 0.5s both;
 }
 
-@-webkit-keyframes bigger{
-    from{ transform: scale3d(0,0,0);}
-    to  { transform: scale3d(1,1,1);}
+@-webkit-keyframes bigger {
+    from {
+        transform: scale3d(0, 0, 0);
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+    }
 }
 
-@keyframes bigger{
-    from{ transform: scale3d(0,0,0);}
-    to  { transform: scale3d(1,1,1);}
+@keyframes bigger {
+    from {
+        transform: scale3d(0, 0, 0);
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+    }
 }
 
-@-webkit-keyframes smaller{
-    from{ transform: scale3d(1,1,1);}
-    to  { transform: scale3d(0,0,0);}
+@-webkit-keyframes smaller {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+    to {
+        transform: scale3d(0, 0, 0);
+    }
 }
 
-@keyframes smaller{
-    from{ transform: scale3d(1,1,1);}
-    to  { transform: scale3d(0,0,0);}
+@keyframes smaller {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+    to {
+        transform: scale3d(0, 0, 0);
+    }
 }
 
-.btPopUp{
+.btPopUp {
     display: flex;
     justify-content: space-around;
 }
 
-.btPopUp button{
+.btPopUp button {
     border: none;
     width: 30%;
     height: 5vh;
     box-shadow: 4px 4px 2px -2px #919191;
 }
 
-
 /*****************Attestation Ecrite********************************/
-.output{
-    overflow:auto ;
+
+.output {
+    overflow: auto;
     background-color: white;
     transition: all 0.3s;
     height: fit-content;
 }
 
-.retrecissement{
-    transform: rotate3d(0,1,0,90deg);
+.retrecissement {
+    transform: rotate3d(0, 1, 0, 90deg);
 }
 
-
-.output fieldset{
-	border-radius: 5px;
+.output fieldset {
+    border-radius: 5px;
     border: 1px solid teal;
 }
 
-.colorSpan{
+.colorSpan {
     color: blue;
     font-weight: bold;
     text-transform: capitalize;
 }
 
-.output p{
+.output p {
     font-family: 'Roboto', sans-serif;
     font-size: 0.8rem;
     width: 85vw;
 }
 
-h1{
+h1 {
     text-align: center;
     font-size: 1rem;
     margin-top: 0;
 }
 
-h2{
+h2 {
     text-align: center;
     font-size: 0.5rem;
 }
 
-.case{
+.case {
     margin-bottom: 20px;
     display: flex;
     align-items: flex-start;
 }
 
-
-.case img{
+.case img {
     min-width: 2rem;
     height: 2rem;
     margin-right: 0.4rem;
     box-shadow: 3px 4px 2px -2px #919191;
 }
 
-
 /*************QR CODE***********/
 
-figure{
+figure {
     text-align: center;
-
 }
 
-figure img{
+figure img {
     width: 66vw;
     height: 66vw;
     background-image: url(../img/Infinity.svg);
@@ -269,19 +293,20 @@ figure img{
     z-index: 1;
 }
 
-figcaption{
+figcaption {
     font-size: 0.6rem;
 }
 
-.scale{
+.scale {
     transform: scale(1.4) translateY(-50%);
 }
 
 /**Overlay**/
-#overlay{
+
+#overlay {
     display: none;
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -291,9 +316,9 @@ figcaption{
     opacity: 0.5;
 }
 
-
 /**************Bouton installer********/
-.installBtn{
+
+.installBtn {
     position: fixed;
     bottom: 4rem;
     left: -100%;
@@ -307,8 +332,8 @@ figcaption{
     justify-content: center;
     align-items: center;
     transition: all 1s;
-  }
+}
 
-  .slide{
+.slide {
     transform: translateX(100%);
-  }
+}
